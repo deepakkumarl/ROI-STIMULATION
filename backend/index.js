@@ -19,11 +19,12 @@ const INTERNAL = {
 
 
 const DB_CONFIG = {
-  host: 'localhost',
-  user: 'root',
-  password: 'hello', 
-  database: 'roi_simulator_',
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || 'hello',
+  database: process.env.DB_NAME || 'roi_simulator_',
 };
+
 
 let pool;
 (async () => {
