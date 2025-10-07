@@ -1,0 +1,161 @@
+/* General container */
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Form grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Form group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels and inputs */
+.form-label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Email input inside results */
+.email-input {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Buttons */
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+.btn-secondary {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #1976d2;
+}
+
+.btn-reset {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-reset:hover {
+  background-color: #d32f2f;
+}
+
+.btn-download {
+  background-color: #ff9800;
+  color: white;
+  margin-top: 10px;
+}
+
+.btn-download:hover {
+  background-color: #fb8c00;
+}
+
+/* Results box */
+.results-box {
+  background-color: #fff3e0;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Messages */
+.message {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  background-color: #ffeb3b;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Saved scenarios */
+.saved-scenarios ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.scenario-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e3f2fd;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+
+.scenario-buttons button {
+  margin-left: 5px;
+}
+
+.btn-load {
+  background-color: #00bcd4;
+  color: white;
+  padding: 5px 10px;
+}
+
+.btn-load:hover {
+  background-color: #0097a7;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f;
+}
