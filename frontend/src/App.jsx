@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 import axios from 'axios';
 
+const API_BASE = 'https://twelve-shrimps-beam.loca.lt'; // LocalTunnel temporary URL
+
 function App() {
   const [formData, setFormData] = useState({
     scenario_name: '',
@@ -22,7 +24,7 @@ function App() {
 
   const fetchScenarios = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/scenarios');
+      const res = await axios.get(`${API_BASE}/scenarios`);
       setSavedScenarios(res.data);
     } catch (err) {
       console.error(err);
@@ -39,7 +41,7 @@ function App() {
 
   const handleSimulate = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/simulate', formData);
+      const res = await axios.post(`${API_BASE}/simulate`, formData);
       setResults(res.data);
       setMessage('');
     } catch (err) {
@@ -54,7 +56,7 @@ function App() {
       return;
     }
     try {
-      await axios.post('http://localhost:5000/scenarios', formData);
+      await axios.post(`${API_BASE}/scenarios`, formData);
       setMessage('Scenario saved!');
       fetchScenarios();
     } catch (err) {
@@ -71,7 +73,7 @@ function App() {
 
   const handleDeleteScenario = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/scenarios/${id}`);
+      await axios.delete(`${API_BASE}/scenarios/${id}`);
       setMessage('Scenario deleted.');
       fetchScenarios();
     } catch (err) {
@@ -86,7 +88,7 @@ function App() {
       return;
     }
     try {
-      const res = await axios.post('http://localhost:5000/report/generate', formData, { responseType: 'blob' });
+      const res = await axios.post(`${API_BASE}/report/generate`, formData, { responseType: 'blob' });
       const url = window.URL.createObjectURL(new Blob([res.data]));
       const link = document.createElement('a');
       link.href = url;
